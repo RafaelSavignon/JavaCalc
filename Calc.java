@@ -8,16 +8,57 @@
    o método "Main()", e os demais métodos da classe CALC, devem ser <u>static</u> 
 */   
 // <pre>
+import java.lang.Math;
 class Calc
 {
 	static int Adicao( int p_Prim, int p_Seg )
 	{
-		return (p_Prim + p_Seg);
+		int retorno = 0;
+		try{
+		retorno = (p_Prim + p_Seg);
+		}catch(Exception e){
+			System.out.println("Erro na Adição");
+		}
+		finally{
+			return retorno;
+		}
 	}
 	
 	static int Subtracao( int p_Prim, int p_Seg )
 	{
-		return (p_Prim - p_Seg);
+		int retorno = 0;
+		try{
+			retorno = (p_Prim - p_Seg);
+		}catch(Exception e){
+			System.out.println("Erro na Subtração");
+		}
+		finally{
+			return retorno;
+		}
+	}
+
+	static int divisao(int p_Prim, int p_Seg){
+		int retorno = 0;
+		try{
+			retorno = (p_Prim / p_Seg);
+		}catch(Exception e){
+			System.out.println("Erro na Divisão");
+		}
+		finally{
+			return retorno;
+		}
+	}
+
+	static int potencia(int p_Prim, int p_Seg){
+		int retorno = 0;
+		try{
+			retorno = (int)Math.pow(p_Prim, p_Seg);
+		}catch(Exception e){
+			System.out.println("Erro na Potenciação");
+		}
+		finally{
+			return retorno;
+		}
 	}
 	
 	static void CaixaBranca()
@@ -96,6 +137,8 @@ class Calc
 				{
 					case "Adicao": resultado = Adicao(prim_Oper, seg_Oper); break;
 					case "Subtracao": resultado = Subtracao(prim_Oper, seg_Oper); break;
+					case "Divisao": resultado = divisao(prim_Oper, seg_Oper); break;
+					case "Potencia": resultado = potencia(prim_Oper, seg_Oper); break;
 				}
 				
 				System.out.println(resultado);
